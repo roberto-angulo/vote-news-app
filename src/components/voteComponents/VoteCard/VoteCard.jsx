@@ -58,7 +58,7 @@ const VoteCard = ({
 
   const percentajesBackground = {
     style: {
-      background: `linear-gradient(90deg, rgba(19,132,127,1) 0%, rgba(19,132,127,1) ${likesPercentajes}%, rgba(181,122,20,1) 25%, rgba(181,122,20,1) 100%)`,
+      background: `linear-gradient(90deg, rgba(19,132,127,1) 0%, rgba(19,132,127,1) ${likesPercentajes}%, rgba(181,122,20,1) ${likesPercentajes}%, rgba(181,122,20,1) 100%)`,
     },
   };
 

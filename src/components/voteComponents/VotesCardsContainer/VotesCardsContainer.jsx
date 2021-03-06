@@ -85,11 +85,11 @@ const VotesSection = () => {
         },
         index
       ) => {
-        const totalVotes = likes !== 0 || (dislikes !== 0 && likes + dislikes);
+        const totalVotes =
+          likes !== 0 || dislikes !== 0 ? likes + dislikes : false;
         const likesPercentajes = totalVotes
-          ? Math.abs((likes * 100) / totalVotes)
+          ? Math.floor((likes * 100) / totalVotes)
           : 50;
-        console.log("likesPercentajes", likesPercentajes);
 
         const dislikesPercentajes = totalVotes
           ? Math.abs(100 - likesPercentajes)

@@ -85,19 +85,12 @@
 
 .voteCardPercentajeBox {
   display: flex;
+  justify-content: space-between;
   transition: all 300ms ease;
   p {
     color: $lightColor;
     font-size: 1.8rem;
     padding: 0.55rem;
-    //position: absolute;
-    &.dislikeVote {
-      //background-color: #b57a14;
-      text-align: right;
-    }
-    &.likeVote {
-      //background-color: #13847f;
-    }
   }
   .percetanjeNumber {
     margin-left: 0.2rem;
