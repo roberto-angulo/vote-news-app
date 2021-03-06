@@ -396,3 +396,7 @@ body {
 }
 $sideMargins: var(--margin);
 $lightColor: #fff;
+
+$zIndexLayers: (
+  "votesModal": 1000,
+);

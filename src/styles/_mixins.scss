@@ -6,3 +6,9 @@
     gap: var($customPropGap);
   }
 }
+
+@mixin flexAndAlignContent() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

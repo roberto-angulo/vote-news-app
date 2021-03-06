@@ -3,9 +3,11 @@ import { NewsContext } from "../../../data/NewsProvider";
 import VoteCard from "../VoteCard/VoteCard";
 import "./votesCardContainer.scss";
 import { dataVote } from "../constants";
+import Modal from "../../Modal/Modal";
 
 const VotesSection = () => {
   const { voteState, setVoteState } = React.useContext(NewsContext);
+  const [shouldShowModal, setShouldShowModal] = React.useState(false);
   const [clickingVote, setClickingVote] = React.useState({
     id: null,
     vote: "",
@@ -13,9 +15,10 @@ const VotesSection = () => {
   const heading = "Votes";
 
   const addLikeToNews = (e, id) => {
+    setShouldShowModal(true);
     const isLikeVote = clickingVote === dataVote.LIKE_VOTED;
 
-    const updateTheNewsState = (vote) => {
+    const updateTheNewsState = () => {
       const handleVotes = (currentNews) => {
         let output;
         if (isLikeVote) {
@@ -42,7 +45,6 @@ const VotesSection = () => {
     setVoteState({ news: updateTheNewsState() });
   };
 
-  console.log("voteState", voteState);
   const printNewsCards = () =>
     voteState.news.map(
       (
@@ -87,11 +89,28 @@ const VotesSection = () => {
         return <VoteCard key={`news_${index}`} {...props} />;
       }
     );
+  const modalVotedContent = (
+    <div>
+      <h2>Thank you for voting!</h2>
+    </div>
+  );
+
   return (
-    <section className="votesCardContainer">
-      <h2 className="votesCardContainerHeading">{heading}</h2>
-      <div className="votesCardContainerGrid">{printNewsCards()}</div>
-    </section>
+    <>
+      {shouldShowModal && (
+        <Modal
+          classNameModal="modalVoted"
+          classNameIcon="modalCloseIcon"
+          closeModalHandler={() => setShouldShowModal(false)}
+        >
+          {modalVotedContent}
+        </Modal>
+      )}
+      <section className="votesCardContainer">
+        <h2 className="votesCardContainerHeading">{heading}</h2>
+        <div className="votesCardContainerGrid">{printNewsCards()}</div>
+      </section>
+    </>
   );
 };
 export default VotesSection;

@@ -22,3 +22,13 @@
     @include responsiveGrid(--autoGridMinSize, --gridGap);
   }
 }
+
+.modalVoted {
+  text-align: center;
+}
+
+.modalCloseIcon {
+  cursor: pointer;
+  margin-bottom: 2rem;
+  width: 3rem;
+}

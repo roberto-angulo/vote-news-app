@@ -52,7 +52,7 @@ const VoteCard = ({
   };
 
   const mostVotedPercentaje =
-    votePushIcon(dataVote.LIKE_VOTED) > votePushIcon(dataVote.DISLIKE_VOTED)
+    likesPercentajes > dislikesPercentajes
       ? votePushIcon(dataVote.LIKE_VOTED)
       : votePushIcon(dataVote.DISLIKE_VOTED);
 
