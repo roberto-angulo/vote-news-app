@@ -1,0 +1,24 @@
+@import "../../../styles/mixins";
+@import "../../../styles/global";
+
+.votesCardContainer {
+  margin: {
+    left: $sideMargins;
+    right: $sideMargins;
+  }
+  .votesCardContainerHeading {
+    margin-bottom: 2.5rem;
+    font: {
+      size: 2.5rem;
+      weight: 400;
+    }
+  }
+  .votesCardContainerGrid {
+    --autoGridMinSize: 50%;
+    @media (min-width: $mediumBreakpoint) {
+      --autoGridMinSize: 46%;
+    }
+    --gridGap: 4%;
+    @include responsiveGrid(--autoGridMinSize, --gridGap);
+  }
+}

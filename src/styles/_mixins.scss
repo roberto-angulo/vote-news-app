@@ -1,0 +1,8 @@
+@import "./global";
+@mixin responsiveGrid($customPropColumns, $customPropGap) {
+  display: grid;
+  grid: {
+    template-columns: repeat(auto-fill, minmax(var($customPropColumns), 1fr));
+    gap: var($customPropGap);
+  }
+}
