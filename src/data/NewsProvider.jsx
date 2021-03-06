@@ -23,8 +23,6 @@ const NewsProvider = ({ children }) => {
     storeNewsOnLocalStorage();
   }, [voteState]);
 
-  console.log("voteState", voteState);
-
   return (
     <NewsContext.Provider value={{ voteState, setVoteState }}>
       {children}

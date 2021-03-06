@@ -98,7 +98,7 @@ const VoteCard = ({
           <span className="percetanjeNumber">{`${likesPercentajes}%`}</span>
         </p>
         <p className="dislikeVote">
-          <LikeIcon size={"1.6rem"} />
+          <LikeIcon size={"1.6rem"} className="thumbDown" />
           <span className="percetanjeNumber">{`${dislikesPercentajes}%`}</span>
         </p>
       </div>

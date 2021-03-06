@@ -8,13 +8,20 @@ import Modal from "../../Modal/Modal";
 const VotesSection = () => {
   const { voteState, setVoteState } = React.useContext(NewsContext);
   const [shouldShowModal, setShouldShowModal] = React.useState(false);
-  const [clickingVote, setClickingVote] = React.useState({
-    id: null,
-    vote: "",
-  });
+  const [clickingVote, setClickingVote] = React.useState("");
+  const [hasUserVoted, setHasUserVoted] = React.useState([
+    {
+      id: null,
+      hasVoted: false,
+    },
+  ]);
   const heading = "Votes";
 
   const addLikeToNews = (e, id) => {
+    setHasUserVoted([
+      ...hasUserVoted.filter((currentOne) => currentOne.id !== id),
+      { id, hasVoted: true },
+    ]);
     setShouldShowModal(true);
     const isLikeVote = clickingVote === dataVote.LIKE_VOTED;
 
@@ -71,7 +78,11 @@ const VotesSection = () => {
           ? Math.abs(100 - likesPercentajes)
           : 50;
 
-        const labelButton = "Vote now";
+        const labelButton = hasUserVoted.some(
+          (currentOne) => currentOne.id === id
+        )
+          ? "Vote again"
+          : "Vote now";
         const props = {
           title,
           id,

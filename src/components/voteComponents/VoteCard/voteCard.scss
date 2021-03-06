@@ -58,10 +58,12 @@
     background-color: transparent;
     border: 1px solid $lightColor;
     color: $lightColor;
+    cursor: pointer;
     margin-top: 0.6rem;
     padding: 0.75rem;
   }
   .likeIconWrapper {
+    cursor: pointer;
     padding: 0.3rem;
     &:focus {
       box-shadow: 0 0 1px 1px rgb(255, 255, 255);
@@ -74,15 +76,15 @@
       background-color: #b57a14;
     }
   }
-  .thumbDown {
-    transform: scaleY(-1);
-  }
+
   .voteCardMostVoted {
     position: absolute;
     bottom: 11rem;
   }
 }
-
+.thumbDown {
+  transform: scaleY(-1);
+}
 .voteCardPercentajeBox {
   display: flex;
   justify-content: space-between;
