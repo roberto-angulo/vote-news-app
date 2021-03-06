@@ -1,22 +1,30 @@
 import React from "react";
+import dataConstants from "./dataConstants";
 import newsData from "./dataFeed.json";
 export const NewsContext = React.createContext({});
 
 const NewsProvider = ({ children }) => {
-  const isThereNewsDataStored = localStorage.getItem("newsData");
-  const news = isThereNewsDataStored
-    ? JSON.parse(isThereNewsDataStored)
-    : newsData.news;
+  const newsDataStored = localStorage.getItem(dataConstants.NEWS_DATA);
 
   const [voteState, setVoteState] = React.useState({
-    news,
+    news: [
+      ...(newsDataStored ? JSON.parse(newsDataStored).news : newsData.news),
+    ],
   });
 
-  /*  const setNewsVote = (userLikeIt) => {
-    setVoteState(() => ({
-      userLikeIt,
-    }));
-  }; */
+  const storeNewsOnLocalStorage = () =>
+    localStorage.setItem(dataConstants.NEWS_DATA, JSON.stringify(voteState));
+
+  React.useEffect(() => {
+    if (!newsDataStored) {
+      storeNewsOnLocalStorage();
+      return;
+    }
+    storeNewsOnLocalStorage();
+  }, [voteState]);
+
+  console.log("voteState", voteState);
+
   return (
     <NewsContext.Provider value={{ voteState, setVoteState }}>
       {children}

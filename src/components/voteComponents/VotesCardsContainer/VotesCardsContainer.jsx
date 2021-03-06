@@ -12,34 +12,7 @@ const VotesSection = () => {
   });
   const heading = "Votes";
 
-  /* React.useEffect(() => {
-    const handleVotes = (currentNews) => {
-      let output;
-      if (isLikeVote) {
-        output =
-          currentNews.id === id
-            ? {
-                ...currentNews,
-                likes: ++currentNews.likes,
-              }
-            : currentNews.id !== id;
-      } else {
-        output =
-          currentNews.id === id
-            ? { ...currentNews, dislikes: ++currentNews.dislikes }
-            : currentNews.id !== id;
-      }
-      return output;
-    };
-    setVoteState({
-      news: [
-        ...voteState.news?.filter((currentNews) => handleVotes(currentNews)),
-      ],
-    });
-  }, [clickingVote]); */
-
   const addLikeToNews = (e, id) => {
-    //setClickingVote(vote);
     const isLikeVote = clickingVote === dataVote.LIKE_VOTED;
 
     const updateTheNewsState = (vote) => {
@@ -63,14 +36,15 @@ const VotesSection = () => {
       };
 
       return [
-        ...voteState.news?.filter((currentNews) => handleVotes(currentNews)),
+        ...voteState.news.filter((currentNews) => handleVotes(currentNews)),
       ];
     };
     setVoteState({ news: updateTheNewsState() });
   };
 
+  console.log("voteState", voteState);
   const printNewsCards = () =>
-    voteState?.news.map(
+    voteState.news.map(
       (
         {
           title,
@@ -88,7 +62,7 @@ const VotesSection = () => {
         const totalVotes =
           likes !== 0 || dislikes !== 0 ? likes + dislikes : false;
         const likesPercentajes = totalVotes
-          ? Math.floor((likes * 100) / totalVotes)
+          ? Math.round((likes * 100) / totalVotes)
           : 50;
 
         const dislikesPercentajes = totalVotes
