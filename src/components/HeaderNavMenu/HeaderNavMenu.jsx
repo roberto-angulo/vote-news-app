@@ -1,24 +1,26 @@
 import React from "react";
-import PropTypes from "prop-types";
 import NavMenu from "../NavMenu/NavMenu";
 import Modal from "../Modal/Modal";
 import SearchInput from "../SearchInput/SearchInput";
-import "./headerNavMenu.scss";
 import { HeroContext } from "../../data/hero/HeroProvider";
+import "./headerNavMenu.scss";
 
 const HeaderNavMenu = () => {
   const {
     mainDataHero: { navbar },
   } = React.useContext(HeroContext);
 
-  const [shouldShowModal, setShouldShowModal] = React.useState(false);
+  const [shouldShowSearchModal, setShouldShowSearchModal] = React.useState(
+    false
+  );
+  const [shouldShowMenuModal, setShouldShowMenuModal] = React.useState(false);
 
   const searchIconHandler = () => {
-    setShouldShowModal(true);
+    setShouldShowSearchModal(true);
   };
 
   const searchInputProps = {
-    onSubmitInputHandler: () => setShouldShowModal(false),
+    onSubmitInputHandler: () => setShouldShowSearchModal(false),
   };
 
   const searchIcon = (
@@ -37,30 +39,55 @@ const HeaderNavMenu = () => {
     </svg>
   );
 
+  const hamburguerIcon = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      version="1.1"
+      id="Capa_1"
+      x="0px"
+      y="0px"
+      viewBox="0 0 512 512"
+      style={{ fill: "#fff", cursor: "pointer" }}
+      onClick={() => setShouldShowMenuModal(true)}
+    >
+      <g transform="translate(1 1)">
+        <g>
+          <g>
+            <path d="M255-1C113.618-1-1,113.618-1,255s114.618,256,256,256s256-114.618,256-256S396.382-1,255-1z M255,468.333     c-117.818,0-213.333-95.515-213.333-213.333S137.182,41.667,255,41.667S468.333,137.182,468.333,255S372.818,468.333,255,468.333     z" />
+            <path d="M361.667,148.333H148.333c-11.782,0-21.333,9.551-21.333,21.333c0,11.782,9.551,21.333,21.333,21.333h213.333     c11.782,0,21.333-9.551,21.333-21.333C383,157.885,373.449,148.333,361.667,148.333z" />
+            <path d="M361.667,233.667H148.333C136.551,233.667,127,243.218,127,255s9.551,21.333,21.333,21.333h213.333     c11.782,0,21.333-9.551,21.333-21.333S373.449,233.667,361.667,233.667z" />
+            <path d="M361.667,319H148.333C136.551,319,127,328.551,127,340.333c0,11.782,9.551,21.333,21.333,21.333h213.333     c11.782,0,21.333-9.551,21.333-21.333C383,328.551,373.449,319,361.667,319z" />
+          </g>
+        </g>
+      </g>
+    </svg>
+  );
+
+  /* const closeMenuModal = () => {
+    setShouldShowMenuModal(false);
+  };
+ */
   return (
     <>
-      {shouldShowModal && (
+      {shouldShowSearchModal && (
         <Modal
-          closeModalHandler={() => setShouldShowModal(false)}
+          closeModalHandler={() => setShouldShowSearchModal(false)}
           classNameModal="closeHeaderModal"
         >
           <SearchInput {...searchInputProps} />
         </Modal>
       )}
-      <header>
+      <header className="headerNavMenuWrapper">
         <NavMenu
           className="headerNavMenu"
-          items={[...navbar.items, searchIcon]}
+          items={navbar.items}
+          searchIcon={searchIcon}
+          hamburguerIcon={hamburguerIcon}
+          shouldShowMenuModal={shouldShowMenuModal}
+          setShouldShowMenuModal={setShouldShowMenuModal}
         />
       </header>
     </>
   );
 };
-
-HeaderNavMenu.propTypes = {
-  items: PropTypes.array.isRequired,
-  brandName: PropTypes.string.isRequired || PropTypes.element.isRequired,
-  searchIconHandler: PropTypes.func,
-};
-
 export default HeaderNavMenu;

@@ -24,13 +24,12 @@ const mainDataHero =  {
 
             }, 
         ], 
-    }, 
+    },
     mainCard: {
         title: <>Whats your opinion on <h1>Pope Francis?</h1></>,
         content: " Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         linkLabel: "More information",
         ctaLabel: "What's your veredict?"
-
     }
 };
 export default mainDataHero;

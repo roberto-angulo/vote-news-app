@@ -1,30 +1,71 @@
 import React from "react";
-import "./navMenu.scss";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { internalPages } from "../../common/appConstants";
+import "./navMenu.scss";
+import Modal from "../Modal/Modal";
 
-const NavMenu = ({ items, className = "" }) => {
+const NavMenu = ({
+  items,
+  shouldShowMenuModal,
+  className = "",
+  searchIcon,
+  setShouldShowMenuModal,
+  hamburguerIcon,
+}) => {
   const { title, slug } = items.find(({ slug }) => slug === "main");
-  const printMenuChildrens = () => (
+  const printBrandMenuItem = () => (
+    <div className="brandBox">
+      <Link to={`/${slug}`}>{title}</Link>
+    </div>
+  );
+  const printMenuChildrens = (isMobile = false) => (
     <>
-      <div className="brandBox">
-        <Link to={`/${slug}`}>{title}</Link>
-      </div>
-      <ul className="navMenuList">
+      <ul className={`navMenuList ${isMobile && "responsive"}`}>
         {items.map((theCurrentItem, index) =>
           theCurrentItem.component !== internalPages.MAIN_PAGE ? (
-            <li key={`menuItem_${index}`}>
+            <li key={`menuItem_${index}`} data-test={`menuItem_${slug}`}>
               <Link to={`/${theCurrentItem.slug}`}>{theCurrentItem.title}</Link>
             </li>
           ) : (
             ""
           )
         )}
+        <li className="searchIcon" data-test="searchIcon">
+          {searchIcon}
+        </li>
       </ul>
     </>
   );
-  return <nav className={`navMenu ${className}`}>{printMenuChildrens()}</nav>;
+  const printMobileMenuIcons = () => (
+    <ul>
+      <li
+        data-test="hamburguerIcon"
+        className="hamburguerIcon"
+        onClick={() => setShouldShowMenuModal(true)}
+      >
+        {hamburguerIcon}
+      </li>
+      <li data-test="searchIconMobile" className="searchIconMobile">
+        {searchIcon}
+      </li>
+    </ul>
+  );
+  return (
+    <>
+      {shouldShowMenuModal && (
+        <Modal closeModalHandler={() => setShouldShowMenuModal(false)}>
+          {printMenuChildrens(true)}
+        </Modal>
+      )}
+      <nav className={`navMenu ${className}`}>
+        {printBrandMenuItem()}
+        {printMenuChildrens()}
+        {printMobileMenuIcons()}
+      </nav>
+      ;
+    </>
+  );
 };
 
 NavMenu.propTypes = {

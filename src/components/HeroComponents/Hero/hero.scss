@@ -1,16 +1,16 @@
 @import "../../../styles/global";
-.heroContainer {
+.hero {
   background: {
     image: url(https://images.pexels.com/photos/5875445/pexels-photo-5875445.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
     blend-mode: multiply;
     color: #bead90;
     size: cover;
   }
-
   position: relative;
   padding: {
     bottom: 8rem;
     left: $sideMargins;
     right: $sideMargins;
+    top: 9.55rem;
   }
 }

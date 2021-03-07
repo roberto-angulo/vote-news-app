@@ -3,7 +3,7 @@ import "./hero.scss";
 
 const Hero = ({ children }) => {
   return (
-    <section data-resr="heroContainer" className="heroContainer">
+    <section data-test="hero" className="hero">
       {children}
     </section>
   );
