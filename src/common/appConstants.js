@@ -10,5 +10,6 @@ export const dataVote = {
   export const internalPages = {
       HOW_IT_WORKS: "HowItWorks",
       LOGIN: "Login",
-      PAST_TRIALS: "PastTrials"
+      PAST_TRIALS: "PastTrials",
+      MAIN_PAGE: "MainPage"
   }

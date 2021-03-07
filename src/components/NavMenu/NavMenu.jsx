@@ -1,38 +1,30 @@
 import React from "react";
 import "./navMenu.scss";
-import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
-import { Link, BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { checkForComponentPage } from "./navMenuHelpers";
+import { Link } from "react-router-dom";
+import { internalPages } from "../../common/appConstants";
 
-const NavMenu = ({ items, brandLogos, className = "" }) => {
+const NavMenu = ({ items, className = "" }) => {
+  const { title, slug } = items.find(({ slug }) => slug === "main");
   const printMenuChildrens = () => (
-    <ul className="navMenuList">
-      {/* <Switch> */}
-      {items.map(({ title, slug }, index) => (
-        <li key={`menuItem_${index}`}>
-          <Link to={`/${slug}`}>{title}</Link>
-        </li>
-      ))}
-      {/* </Switch> */}
-    </ul>
+    <>
+      <div className="brandBox">
+        <Link to={`/${slug}`}>{title}</Link>
+      </div>
+      <ul className="navMenuList">
+        {items.map((theCurrentItem, index) =>
+          theCurrentItem.component !== internalPages.MAIN_PAGE ? (
+            <li key={`menuItem_${index}`}>
+              <Link to={`/${theCurrentItem.slug}`}>{theCurrentItem.title}</Link>
+            </li>
+          ) : (
+            ""
+          )
+        )}
+      </ul>
+    </>
   );
-  return ReactDOM.createPortal(
-    <nav className={`navMenu ${className}`}>
-      <div className="brandBox">{brandLogos}</div>
-      <Router>
-        {printMenuChildrens()}
-        <Switch>
-          {items.map(({ component, slug }, index) => (
-            <Route exact path={`/${slug}`} key={`route_${index}`}>
-              {checkForComponentPage(component)}
-            </Route>
-          ))}
-        </Switch>
-      </Router>
-    </nav>,
-    document.getElementById("root")
-  );
+  return <nav className={`navMenu ${className}`}>{printMenuChildrens()}</nav>;
 };
 
 NavMenu.propTypes = {

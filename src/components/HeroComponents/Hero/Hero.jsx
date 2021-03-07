@@ -1,11 +1,11 @@
 import React from "react";
-import "./heroContainer.scss";
+import "./hero.scss";
 
-const HeroContainer = ({ children }) => {
+const Hero = ({ children }) => {
   return (
     <section data-resr="heroContainer" className="heroContainer">
       {children}
     </section>
   );
 };
-export default HeroContainer;
+export default Hero;

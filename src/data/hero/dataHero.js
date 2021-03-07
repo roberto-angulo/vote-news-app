@@ -3,6 +3,11 @@ import { internalPages } from "../../common/appConstants";
 const mainDataHero =  { 
      navbar: {
         items:[
+            {
+                title: "Rule of Thumb",
+                slug: "main",
+                component: internalPages.MAIN_PAGE,
+            },
             { title: "Past trials", 
               slug: "past-trials",
               component: internalPages.PAST_TRIALS
@@ -17,9 +22,8 @@ const mainDataHero =  {
                 slug: "log-in",
                 component: internalPages.LOGIN,
 
-            },
+            }, 
         ], 
-        brandName: "Rule  of Thumb",
     }, 
     mainCard: {
         title: <>Whats your opinion on <h1>Pope Francis?</h1></>,

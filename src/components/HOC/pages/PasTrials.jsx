@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 const PasTrials = (props) => {
   console.log("PAST TRIALS", props);
@@ -9,5 +8,4 @@ const PasTrials = (props) => {
     </article>
   );
 };
-PasTrials.propTypes = {};
 export default PasTrials;

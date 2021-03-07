@@ -1,40 +1,40 @@
 import React from "react";
-import HeroContainer from "../HeroContainer/HeroContainer";
-import HeaderNavMenu from "../HeaderNavMenu/HeaderNavMenu";
-import MainCard from "../MainCard/MainCard";
-import { HeroContext } from "../../data/hero/HeroProvider";
-import Modal from "../Modal/Modal";
+import Hero from "../Hero/Hero";
+import HeaderNavMenu from "../../HeaderNavMenu/HeaderNavMenu";
+import MainCard from "../../MainCard/MainCard";
+import { HeroContext } from "../../../data/hero/HeroProvider";
+import Modal from "../../Modal/Modal";
 import HeroBottomLine from "../HeroBottomLine/HeroBottomLine";
-import SearchInput from "../SearchInput/SearchInput";
-import "./heroSection.scss";
+import SearchInput from "../../SearchInput/SearchInput";
+import "./heroContainer.scss";
 
-const HeroSection = () => {
+const HeroContainer = () => {
   const { mainDataHero } = React.useContext(HeroContext);
-  const [shouldShowModal, setShouldShowModal] = React.useState(false);
+  /*  const [shouldShowModal, setShouldShowModal] = React.useState(false);
   const searchIconHandler = () => {
     setShouldShowModal(true);
-  };
+  }; */
   const closingLabel = "Closing in";
   const daysLabel = "22 days";
-  const searchInputProps = {
+  /* const searchInputProps = {
     onSubmitInputHandler: () => setShouldShowModal(false),
-  };
+  }; */
   return (
     <>
-      {shouldShowModal && (
+      {/* {shouldShowModal && (
         <Modal
           closeModalHandler={() => setShouldShowModal(false)}
           classNameModal="closeHeaderModal"
         >
           <SearchInput {...searchInputProps} />
         </Modal>
-      )}
-      <HeroContainer>
-        <HeaderNavMenu {...{ ...mainDataHero.navbar, searchIconHandler }} />
+      )} */}
+      <Hero>
+        {/* <HeaderNavMenu {...{ ...mainDataHero.navbar, searchIconHandler }} /> */}
         <MainCard {...mainDataHero.mainCard} />
         <HeroBottomLine {...{ closingLabel, daysLabel }} />
-      </HeroContainer>
+      </Hero>
     </>
   );
 };
-export default HeroSection;
+export default HeroContainer;

@@ -1,19 +1,14 @@
 import React from 'react'
-import HeroSection from './components/HeroSection/HeroSection';
-import VotesCardsContainer from './components/voteComponents/VotesCardsContainer/VotesCardsContainer';
-import HeroProvider from './data/hero/HeroProvider';
-import NewsProvider from './data/news/NewsProvider';
+import { MenuHeaderSection } from './components/HOC/sections/indexExport';
+import { BrowserRouter as Router } from "react-router-dom";
+import RouterAppPages from './components/HOC/RouterAppPages';
 
 function App() {
   return (
-    <>
-      <HeroProvider>
-        <HeroSection />
-      </HeroProvider>
-      <NewsProvider>
-        <VotesCardsContainer />
-      </NewsProvider>
-    </>
+    <Router>
+        <MenuHeaderSection />
+        <RouterAppPages />
+    </Router>
   );
 }
 export default App;
