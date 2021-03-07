@@ -7,7 +7,10 @@
     right: $sideMargins;
   }
   .votesCardContainerHeading {
-    margin-bottom: 2.5rem;
+    margin: {
+      bottom: 2.5rem;
+      top: 2.2rem;
+    }
     font: {
       size: 2.5rem;
       weight: 400;
@@ -21,14 +24,4 @@
     --gridGap: 4%;
     @include responsiveGrid(--autoGridMinSize, --gridGap);
   }
-}
-
-.modalVoted {
-  text-align: center;
-}
-
-.modalCloseIcon {
-  cursor: pointer;
-  margin-bottom: 2rem;
-  width: 3rem;
 }

@@ -1,0 +1,18 @@
+@import "../../styles/global";
+.infoBox {
+  --flexDirection: column;
+  @media (min-width: $smallBreakpoint) {
+    --flexDirection: row;
+  }
+  background-color: $lightGray;
+  display: flex;
+  padding: 1.5rem;
+  margin-top: 2.2rem;
+  flex-direction: var(--flexDirection);
+  .infoFirstColumn {
+    flex-basis: 20%;
+  }
+  .infoSecondColumn {
+    flex-basis: 80%;
+  }
+}

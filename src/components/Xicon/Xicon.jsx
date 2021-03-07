@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./xIcon.scss";
 
 const Xicon = ({ className = "", iconFunctionHandler }) => {
   return (
@@ -11,7 +12,7 @@ const Xicon = ({ className = "", iconFunctionHandler }) => {
         x="0px"
         y="0px"
         viewBox="0 0 469.333 469.333"
-        className={className}
+        className={`xIcon ${className}`}
         onClick={iconFunctionHandler}
       >
         <g>

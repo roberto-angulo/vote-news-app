@@ -1,6 +1,6 @@
 import React from 'react'
 import HeroSection from './components/HeroSection/HeroSection';
-import VotesSection from './components/voteComponents/VotesCardsContainer/VotesCardsContainer';
+import VotesCardsContainer from './components/voteComponents/VotesCardsContainer/VotesCardsContainer';
 import HeroProvider from './data/hero/HeroProvider';
 import NewsProvider from './data/news/NewsProvider';
 
@@ -11,7 +11,7 @@ function App() {
         <HeroSection />
       </HeroProvider>
       <NewsProvider>
-        <VotesSection />
+        <VotesCardsContainer />
       </NewsProvider>
     </>
   );

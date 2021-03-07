@@ -1,0 +1,11 @@
+.searchInput {
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid;
+  padding: 2rem;
+  padding-bottom: 0.5rem;
+  font-size: 2rem;
+  &:focus {
+    outline: 0;
+  }
+}

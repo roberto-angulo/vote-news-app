@@ -4,8 +4,9 @@ import VoteCard from "../VoteCard/VoteCard";
 import "./votesCardContainer.scss";
 import { dataVote } from "../constants";
 import Modal from "../../Modal/Modal";
+import InfoBox from "../../InfoBox/InfoBox";
 
-const VotesSection = () => {
+const VotesCardsContainer = () => {
   const { voteState, setVoteState } = React.useContext(NewsContext);
   const [shouldShowModal, setShouldShowModal] = React.useState(false);
   const [clickingVote, setClickingVote] = React.useState("");
@@ -106,22 +107,24 @@ const VotesSection = () => {
     </div>
   );
 
+  const infoBoxProps = {
+    infoFirstColumn: "lorem upkdaklsd",
+    infoSecondColumn: "klasdlkalñkdñkasñlkdñ",
+  };
+
   return (
     <>
       {shouldShowModal && (
-        <Modal
-          classNameModal="modalVoted"
-          classNameIcon="modalCloseIcon"
-          closeModalHandler={() => setShouldShowModal(false)}
-        >
+        <Modal closeModalHandler={() => setShouldShowModal(false)}>
           {modalVotedContent}
         </Modal>
       )}
       <section className="votesCardContainer">
+        <InfoBox {...infoBoxProps} />
         <h2 className="votesCardContainerHeading">{heading}</h2>
         <div className="votesCardContainerGrid">{printNewsCards()}</div>
       </section>
     </>
   );
 };
-export default VotesSection;
+export default VotesCardsContainer;

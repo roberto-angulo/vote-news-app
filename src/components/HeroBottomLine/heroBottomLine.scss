@@ -1,0 +1,28 @@
+@import "../../styles/global";
+.HeroBottomLine {
+  display: flex;
+  left: 0;
+  top: 91.75%;
+  width: 100%;
+  position: absolute;
+  .closingLabel {
+    text-align: right;
+    text-transform: uppercase;
+    color: $lightColor;
+    padding-top: 0.4rem;
+  }
+  .closingBox {
+    flex-basis: 25%;
+    padding: 0.7rem;
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+  .daysLabel {
+    font-size: 2rem;
+  }
+  .daysBox {
+    flex-basis: 75%;
+    padding: 0.7rem;
+    background-color: $lightGray;
+    text-align: left;
+  }
+}
