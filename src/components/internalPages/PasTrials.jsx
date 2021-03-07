@@ -9,7 +9,5 @@ const PasTrials = (props) => {
     </article>
   );
 };
-
 PasTrials.propTypes = {};
-
 export default PasTrials;

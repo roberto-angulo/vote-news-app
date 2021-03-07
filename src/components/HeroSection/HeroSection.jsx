@@ -9,8 +9,8 @@ import SearchInput from "../SearchInput/SearchInput";
 import "./heroSection.scss";
 
 const HeroSection = () => {
-  const [shouldShowModal, setShouldShowModal] = React.useState(false);
   const { mainDataHero } = React.useContext(HeroContext);
+  const [shouldShowModal, setShouldShowModal] = React.useState(false);
   const searchIconHandler = () => {
     setShouldShowModal(true);
   };

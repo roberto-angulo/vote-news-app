@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./voteCard.scss";
-import { dataVote } from "../constants";
+import { dataVote } from "../../../common/appConstants";
 import LikeIcon from "../../LikeIcon/LikeIcon";
 
 const VoteCard = ({

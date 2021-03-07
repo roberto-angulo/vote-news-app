@@ -2,7 +2,7 @@ import React from "react";
 import { NewsContext } from "../../../data/news/NewsProvider";
 import VoteCard from "../VoteCard/VoteCard";
 import "./votesCardContainer.scss";
-import { dataVote } from "../constants";
+import { dataVote } from "../../../common/appConstants";
 import Modal from "../../Modal/Modal";
 import InfoBox from "../../InfoBox/InfoBox";
 

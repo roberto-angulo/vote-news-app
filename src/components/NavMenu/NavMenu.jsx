@@ -1,25 +1,37 @@
 import React from "react";
 import "./navMenu.scss";
+import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 import { Link, BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { checkForComponentPage } from "./navMenuHelpers";
 
 const NavMenu = ({ items, brandLogos, className = "" }) => {
-  const printMenuChildrens = () =>
-    items.map(({ title, slug }, index) => (
-      <li key={`menuItem_${index}`}>
-        <Router>
+  const printMenuChildrens = () => (
+    <ul className="navMenuList">
+      {/* <Switch> */}
+      {items.map(({ title, slug }, index) => (
+        <li key={`menuItem_${index}`}>
           <Link to={`/${slug}`}>{title}</Link>
-          <Switch>
-            <Route exact path={`/${slug}`}></Route>
-          </Switch>
-        </Router>
-      </li>
-    ));
-  return (
+        </li>
+      ))}
+      {/* </Switch> */}
+    </ul>
+  );
+  return ReactDOM.createPortal(
     <nav className={`navMenu ${className}`}>
       <div className="brandBox">{brandLogos}</div>
-      <ul className="navMenuList">{printMenuChildrens()}</ul>
-    </nav>
+      <Router>
+        {printMenuChildrens()}
+        <Switch>
+          {items.map(({ component, slug }, index) => (
+            <Route exact path={`/${slug}`} key={`route_${index}`}>
+              {checkForComponentPage(component)}
+            </Route>
+          ))}
+        </Switch>
+      </Router>
+    </nav>,
+    document.getElementById("root")
   );
 };
 

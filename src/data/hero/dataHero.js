@@ -1,19 +1,21 @@
+import { internalPages } from "../../common/appConstants";
+
 const mainDataHero =  { 
      navbar: {
         items:[
             { title: "Past trials", 
               slug: "past-trials",
-              component: "PasTrials"
+              component: internalPages.PAST_TRIALS
             },
             {
                 title: "How it works",
                 slug: "how-it-works",
-                component: "HowItWorks"
+                component: internalPages.HOW_IT_WORKS
             },
             {
                 title:  "Log In/Sign Up",
                 slug: "log-in",
-                component: "Login",
+                component: internalPages.LOGIN,
 
             },
         ], 
