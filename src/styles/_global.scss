@@ -368,6 +368,11 @@ h6 {
   }
 }
 
+ul {
+  margin-top: 0;
+  padding: 0;
+}
+
 p {
   margin: 0;
 }
@@ -380,6 +385,7 @@ button {
 $smallBreakpoint: 35.93rem;
 $mediumBreakpoint: 47.9rem;
 $largeBreakpoint: 64rem;
+$extraLargeBreakpoint: 80rem;
 
 $font: "Lato", sans-serif;
 $fontBold: 700;
@@ -396,6 +402,8 @@ body {
 }
 $sideMargins: var(--margin);
 $lightColor: #fff;
+$likeColor: #13847f;
+$dislikeColor: #b57a14;
 
 $zIndexLayers: (
   "votesModal": 1000,

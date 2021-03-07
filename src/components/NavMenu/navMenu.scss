@@ -1,0 +1,22 @@
+@import "../../styles/global";
+.navMenu {
+  display: flex;
+  padding-top: 2.85rem;
+  /* margin: {
+    left: $sideMargins;
+    right: $sideMargins;
+  } */
+  .brandBox {
+    flex-basis: 25%;
+    font-size: 1.85rem;
+  }
+  .navMenuList {
+    display: flex;
+    flex-basis: 75%;
+    justify-content: flex-end;
+    list-style: none;
+    li:not(li:last-child) {
+      margin-right: 2.85rem;
+    }
+  }
+}

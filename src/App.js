@@ -1,14 +1,19 @@
+import React from 'react'
+import HeroSection from './components/HeroSection/HeroSection';
 import VotesSection from './components/voteComponents/VotesCardsContainer/VotesCardsContainer';
-import NewsProvider from './data/NewsProvider';
+import HeroProvider from './data/hero/HeroProvider';
+import NewsProvider from './data/news/NewsProvider';
 
 function App() {
   return (
-    <div className="App">
+    <>
+      <HeroProvider>
+        <HeroSection />
+      </HeroProvider>
       <NewsProvider>
         <VotesSection />
       </NewsProvider>
-    </div>
+    </>
   );
 }
-
 export default App;

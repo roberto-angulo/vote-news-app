@@ -1,5 +1,5 @@
 import React from "react";
-import { NewsContext } from "../../../data/NewsProvider";
+import { NewsContext } from "../../../data/news/NewsProvider";
 import VoteCard from "../VoteCard/VoteCard";
 import "./votesCardContainer.scss";
 import { dataVote } from "../constants";

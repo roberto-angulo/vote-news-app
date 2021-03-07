@@ -1,5 +1,12 @@
+@import "../../styles/global";
 .heroContainer {
-  background-image: url(../../images/hero-image.jpg);
-  min-height: 9.7rem;
-  width: 100%;
+  padding: {
+    bottom: 5.5rem;
+    left: $sideMargins;
+    right: $sideMargins;
+  }
+  background: {
+    image: url(../../images/hero-image.jpg);
+    size: cover;
+  }
 }

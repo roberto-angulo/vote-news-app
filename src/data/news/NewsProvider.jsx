@@ -1,5 +1,5 @@
 import React from "react";
-import dataConstants from "./dataConstants";
+import dataConstants from "../dataConstants";
 import newsData from "./dataFeed.json";
 export const NewsContext = React.createContext({});
 

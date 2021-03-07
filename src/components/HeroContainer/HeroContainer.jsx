@@ -1,7 +1,7 @@
 import React from "react";
+import "./heroContainer.scss";
 
-const HeroContainer = () => {
-  return <section className="heroContainer"></section>;
+const HeroContainer = ({ children }) => {
+  return <section className="heroContainer">{children}</section>;
 };
-
 export default HeroContainer;
