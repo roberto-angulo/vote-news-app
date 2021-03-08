@@ -25,7 +25,12 @@ const NavMenu = ({
         {items.map((theCurrentItem, index) =>
           theCurrentItem.component !== internalPages.MAIN_PAGE ? (
             <li key={`menuItem_${index}`} data-test={`menuItem_${slug}`}>
-              <Link to={`/${theCurrentItem.slug}`}>{theCurrentItem.title}</Link>
+              <Link
+                to={`/${theCurrentItem.slug}`}
+                onClick={() => setShouldShowMenuModal(false)}
+              >
+                {theCurrentItem.title}
+              </Link>
             </li>
           ) : (
             ""

@@ -1,0 +1,16 @@
+.footerMenu {
+  --textAlignment: center;
+  text-align: var(--textAlignment);
+}
+
+.socialNetworks {
+  --textAlignment: center;
+  display: flex;
+  justify-content: space-around;
+  text-align: var(--textAlignment);
+  span {
+    &:first-child {
+      margin-right: 0.25rem;
+    }
+  }
+}
