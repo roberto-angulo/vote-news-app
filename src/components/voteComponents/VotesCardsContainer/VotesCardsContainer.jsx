@@ -108,8 +108,14 @@ const VotesCardsContainer = () => {
   );
 
   const infoBoxProps = {
-    infoFirstColumn: "lorem upkdaklsd",
-    infoSecondColumn: "klasdlkalñkdñkasñlkdñ",
+    infoFirstColumn: (
+      <>
+        <p className="firstColumnFirstParragraph">Speak out. Be heard.</p>
+        <p className="firstColumnSecondParragraph">Be counted</p>
+      </>
+    ),
+    infoSecondColumn:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu leo sed est imperdiet blandit.",
   };
 
   return (

@@ -31,4 +31,14 @@
 
     @include responsiveGrid(--autoGridMinSize, --gridGap);
   }
+
+  .firstColumnFirstParragraph {
+    font-size: 1.27rem;
+  }
+  .firstColumnSecondParragraph {
+    font: {
+      size: 2rem;
+      weight: 700;
+    }
+  }
 }

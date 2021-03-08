@@ -1,7 +1,9 @@
 @import "../../styles/global";
 .infoBox {
+  --textAlignment: center;
   --flexDirection: column;
-  @media (min-width: $smallBreakpoint) {
+  @media (min-width: $largeBreakpoint) {
+    --textAlignment: left;
     --flexDirection: row;
   }
   background-color: $lightGray;
@@ -9,10 +11,36 @@
   padding: 1.5rem;
   margin-top: 2.2rem;
   flex-direction: var(--flexDirection);
+  text-align: var(--textAlignment);
   .infoFirstColumn {
-    flex-basis: 20%;
+    --order: 2;
+    @media (min-width: $largeBreakpoint) {
+      --order: 1;
+    }
+    order: var(--order);
+    flex-basis: 30%;
   }
   .infoSecondColumn {
-    flex-basis: 80%;
+    --order: 3;
+    @media (min-width: $largeBreakpoint) {
+      --order: 2;
+    }
+    padding-top: 0.55rem;
+    flex-basis: 60%;
+    order: var(--order);
+  }
+  .closeIconColumn {
+    --paddingTop: 0;
+    --order: 1;
+    @media (min-width: $largeBreakpoint) {
+      --paddingTop: 0.55rem;
+      --order: 3;
+    }
+    order: var(--order);
+    padding-top: var(--paddingTop);
+    cursor: pointer;
+    flex-basis: 10%;
+    font-size: 2rem;
+    text-align: right;
   }
 }

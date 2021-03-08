@@ -14,7 +14,7 @@ const Modal = ({
 }) =>
   ReactDOM.createPortal(
     <div data-test="modal" className={`votesModal ${classNameModal}`}>
-      <div>
+      <div className="modalContentWrapper">
         <Xicon
           className={classNameIcon}
           iconFunctionHandler={closeModalHandler}

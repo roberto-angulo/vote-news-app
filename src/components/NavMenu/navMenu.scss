@@ -27,19 +27,26 @@
     }
 
     .hamburguerIcon {
+      --width: 2.5rem;
+      @media (min-width: $smallBreakpoint) {
+        --width: 3.55rem;
+      }
       @include responsiveIcons();
       margin: {
         right: 0;
         left: auto;
       }
-
-      width: 3.55rem;
+      width: var(--width);
     }
     .searchIconMobile {
+      --width: 2.5rem;
+      @media (min-width: $smallBreakpoint) {
+        --width: 3rem;
+      }
       padding-top: 0.3rem;
       @include responsiveIcons();
       svg {
-        width: 3rem;
+        width: var(--width);
       }
     }
   }

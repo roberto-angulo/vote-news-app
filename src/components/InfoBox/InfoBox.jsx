@@ -11,6 +11,10 @@ const InfoBox = ({ infoFirstColumn, infoSecondColumn, className = "" }) => {
       <div data-test="infoSecondColumn" className="infoSecondColumn">
         {infoSecondColumn}
       </div>
+
+      <div data-test="closeIconColumn" className="closeIconColumn">
+        &times;
+      </div>
     </div>
   );
 };

@@ -4,7 +4,11 @@ import "./searchInput.scss";
 
 const SearchInput = ({ placeholder = "Search...", onSubmitInputHandler }) => {
   return (
-    <form onSubmit={onSubmitInputHandler} data-test="searchInputForm">
+    <form
+      onSubmit={onSubmitInputHandler}
+      data-test="searchInputForm"
+      className="searchInputForm"
+    >
       <label htmlFor="searchInput" data-test="searchInputLabel"></label>
       <input
         name="searchInput"
