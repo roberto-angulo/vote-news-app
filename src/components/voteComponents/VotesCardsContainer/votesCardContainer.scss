@@ -18,11 +18,17 @@
     }
   }
   .votesCardContainerGrid {
+    --gridGap: 4%;
     --autoGridMinSize: 50%;
     @media (min-width: $mediumBreakpoint) {
       --autoGridMinSize: 46%;
+      --gridGap: 1px;
     }
-    --gridGap: 4%;
+
+    @media (min-width: $largeBreakpoint) {
+      --gridGap: 4%;
+    }
+
     @include responsiveGrid(--autoGridMinSize, --gridGap);
   }
 }

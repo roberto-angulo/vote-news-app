@@ -1,6 +1,11 @@
+@import "../../styles/global";
 .footerMenu {
   --textAlignment: center;
+  @media (min-width: $mediumBreakpoint) {
+    --textAlignment: left;
+  }
   text-align: var(--textAlignment);
+  list-style: none;
 }
 
 .socialNetworks {
@@ -10,7 +15,24 @@
   text-align: var(--textAlignment);
   span {
     &:first-child {
-      margin-right: 0.25rem;
+      margin: {
+        right: 0.55rem;
+        left: 0.55rem;
+      }
     }
+  }
+}
+
+.footerWrapper {
+  --flexDirection: column;
+  @media (min-width: $mediumBreakpoint) {
+    --flexDirection: row;
+  }
+  display: flex;
+  flex-direction: var(--flexDirection);
+  justify-content: space-between;
+  margin: {
+    right: $sideMargins;
+    left: $sideMargins;
   }
 }

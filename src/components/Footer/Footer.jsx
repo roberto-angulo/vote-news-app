@@ -5,7 +5,7 @@ import "./footer.scss";
 const Footer = ({ footerItems, socialData }) => {
   console.log("socialData", socialData);
   return (
-    <div>
+    <div className="footerWrapper">
       <nav>
         <ul className="footerMenu">{footerItems}</ul>
       </nav>

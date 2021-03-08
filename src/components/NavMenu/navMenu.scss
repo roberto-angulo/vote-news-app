@@ -79,6 +79,11 @@
     }
   }
   .mobileIconsWrapper {
+    --display: block;
+    @media (min-width: $largeBreakpoint) {
+      --display: none;
+    }
+    display: var(--display);
     flex-basis: 75%;
   }
 }
