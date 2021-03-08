@@ -2,7 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./InfoBox.scss";
 
-const InfoBox = ({ infoFirstColumn, infoSecondColumn, className = "" }) => {
+const InfoBox = ({
+  infoFirstColumn,
+  infoSecondColumn,
+  className = "",
+  xIcon = false,
+}) => {
   return (
     <div className={`infoBox ${className}`} data-test="infoBox">
       <div className="infoFirstColumn" data-test="infoFirstColumn">
@@ -12,17 +17,20 @@ const InfoBox = ({ infoFirstColumn, infoSecondColumn, className = "" }) => {
         {infoSecondColumn}
       </div>
 
-      <div data-test="closeIconColumn" className="closeIconColumn">
-        &times;
-      </div>
+      {xIcon && (
+        <div data-test="closeIconColumn" className="closeIconColumn">
+          &times;
+        </div>
+      )}
     </div>
   );
 };
 
 InfoBox.propTypes = {
-  infoFirstColumn: PropTypes.string.isRequired,
-  secondFirstColumn: PropTypes.string.isRequired,
+  infoFirstColumn: PropTypes.element.isRequired || PropTypes.string.isRequired,
+  infoSecondColumn: PropTypes.element.isRequired || PropTypes.string.isRequired,
   className: PropTypes.string,
+  xIcon: PropTypes.bool,
 };
 
 export default InfoBox;

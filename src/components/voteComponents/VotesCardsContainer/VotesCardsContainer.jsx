@@ -116,6 +116,17 @@ const VotesCardsContainer = () => {
     ),
     infoSecondColumn:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu leo sed est imperdiet blandit.",
+    xIcon: true,
+  };
+
+  const ctaSubmitName = {
+    infoFirstColumn: <p>Is there anyone else you would want us to add?</p>,
+    infoSecondColumn: (
+      <p>
+        <button>Submit Name</button>
+      </p>
+    ),
+    className: "ctaSubmitPerson",
   };
 
   return (
@@ -129,6 +140,7 @@ const VotesCardsContainer = () => {
         <InfoBox {...infoBoxProps} />
         <h2 className="votesCardContainerHeading">{heading}</h2>
         <div className="votesCardContainerGrid">{printNewsCards()}</div>
+        <InfoBox {...ctaSubmitName} />
       </section>
     </>
   );

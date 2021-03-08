@@ -6,7 +6,7 @@
     left: $sideMargins;
     right: $sideMargins;
   }
-  padding-bottom: 15rem;
+  padding-bottom: 2rem;
   .votesCardContainerHeading {
     margin: {
       bottom: 2.5rem;
@@ -39,6 +39,40 @@
     font: {
       size: 2rem;
       weight: 700;
+    }
+  }
+
+  .ctaSubmitPerson {
+    --marginTop: 14rem;
+    @media (min-width: $mediumBreakpoint) {
+      --marginTop: 5rem;
+    }
+    background: {
+      image: url(https://images.pexels.com/photos/976866/pexels-photo-976866.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+      size: contain;
+      color: lightgray;
+      blend-mode: overlay;
+    }
+
+    .infoSecondColumn {
+      --textAlignment: center;
+      @media (min-width: $largeBreakpoint) {
+        --textAlignment: right;
+      }
+      text-align: var(--textAlignment);
+    }
+
+    margin-top: var(--marginTop);
+    .infoFirstColumn {
+      font-size: 1.5rem;
+    }
+    button {
+      border: 2px solid;
+      padding: 1rem;
+      background: transparent;
+      min-width: 11rem;
+      font-weight: 700;
+      font-size: 1.2rem;
     }
   }
 }
