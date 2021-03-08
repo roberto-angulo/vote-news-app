@@ -5,7 +5,9 @@ Hello, I want to say thank you for considering me for this vacant.
 ## Setup
 
 1.0 First of all, please install packages by using yarn install.
+
 2.0 Then use yarn start
+
 3.0 You can go the app by writting in your browser nav bar localhost:[number-of-the-port]/main
 
 # About the code
