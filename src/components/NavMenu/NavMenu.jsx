@@ -13,11 +13,11 @@ const NavMenu = ({
   setShouldShowMenuModal,
   hamburguerIcon,
 }) => {
-  const { title, slug } = items.find(({ slug }) => slug === "main");
+  const { title } = items.find(({ slug }) => slug === "/");
 
   const printBrandMenuItem = () => (
     <div className="brandBox">
-      <Link to={`/${slug}`}>{title}</Link>
+      <Link to="/">{title}</Link>
     </div>
   );
 
@@ -26,7 +26,10 @@ const NavMenu = ({
       <ul className={`navMenuList ${isMobile && "responsive"}`}>
         {items.map((theCurrentItem, index) =>
           theCurrentItem.component !== internalPages.MAIN_PAGE ? (
-            <li key={`menuItem_${index}`} data-test={`menuItem_${slug}`}>
+            <li
+              key={`menuItem_${index}`}
+              data-test={`menuItem_${theCurrentItem.slug}`}
+            >
               <Link
                 to={`/${theCurrentItem.slug}`}
                 onClick={() => setShouldShowMenuModal(false)}

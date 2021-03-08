@@ -5,7 +5,7 @@ const mainDataHero =  {
         items:[
             {
                 title: "Rule of Thumb",
-                slug: "main",
+                slug: "/",
                 component: internalPages.MAIN_PAGE,
             },
             { title: "Past trials", 
