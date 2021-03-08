@@ -8,7 +8,7 @@ Hello, I want to say thank you for considering me for this vacant.
 
 2.0 Then use yarn start
 
-3.0 You can go the app by writting in your browser nav bar localhost:[number-of-the-port]/main
+3.0 You can go to the app by writting in your browser bar as follows: localhost:[number-of-the-port]/main
 
 # About the code
 
