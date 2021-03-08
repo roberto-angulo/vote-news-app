@@ -13,10 +13,6 @@
     padding-top: 2.85rem;
     transition: all 300ms ease-in-out;
     width: 100%;
-    /*  .fadeIn {
-    opacity: 0;
-    transform: translateY(-100%);
-  } */
     .brandBox {
       flex-basis: 25%;
       font-size: 1.85rem;
@@ -25,55 +21,64 @@
         text-decoration: none;
       }
     }
-    .navMenuList {
-      /* --position: absolute;
-        --textAlignment: center;
-         */
-      --opacity: 0;
-      --display: block;
-      @media (min-width: $largeBreakpoint) {
-        /* --position: static;
-        --textAlignment: right;
-         */
-        --opacity: 1;
-        --display: flex;
-      }
-      /* position: var(--position);
-      text-align: var(--textAlignment);
-       */
-      opacity: var(--opacity);
-      display: var(--display);
-      flex-basis: 75%;
-      justify-content: flex-end;
-      list-style: none;
-      width: 100%;
-      &.responsive {
-        --position: absolute;
-        --textAlignment: center;
-        --opacity: 0;
-        @media (min-width: $largeBreakpoint) {
-          --position: static;
-          --textAlignment: right;
-          --opacity: 1;
-        }
-        position: var(--position);
-        text-align: var(--textAlignment);
-        opacity: var(--opacity);
-      }
-      a {
-        color: $lightColor;
-        text-decoration: none;
-      }
-      li:not(li:last-child) {
-        margin-right: 2.85rem;
-      }
+
+    li:not(li:last-child) {
+      margin-right: 2.85rem;
     }
+
     .hamburguerIcon {
       @include responsiveIcons();
+      margin: {
+        right: 0;
+        left: auto;
+      }
+
       width: 3.55rem;
     }
     .searchIconMobile {
       @include responsiveIcons();
     }
+  }
+  .navMenuList {
+    --opacity: 0;
+    --display: none;
+    @media (min-width: $largeBreakpoint) {
+      --opacity: 1;
+      --display: flex;
+    }
+    display: var(--display);
+    flex-basis: 75%;
+    justify-content: flex-end;
+    list-style: none;
+    width: 100%;
+    &.responsive {
+      display: block;
+      --position: absolute;
+      --opacity: 0;
+      --textAlignment: center;
+      @media (min-width: $largeBreakpoint) {
+        --position: static;
+        --textAlignment: right;
+        --opacity: 1;
+      }
+      li {
+        margin-right: 0;
+        text-transform: uppercase;
+        padding-bottom: 0.75rem;
+        font-size: 1.25rem;
+      }
+      a {
+        color: $darkColor;
+      }
+      text-align: var(--textAlignment);
+      list-style: none;
+    }
+    a {
+      color: $lightColor;
+      text-decoration: none;
+    }
+  }
+  .mobileIconsWrapper {
+    flex-basis: 75%;
   }
 }

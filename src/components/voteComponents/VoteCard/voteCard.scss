@@ -13,7 +13,8 @@
   position: relative;
   min-height: var(--minHeightCard);
   .voteCardTitle {
-    --headerFontSize: 1.55rem;
+    --headerFontSize: 1.3rem;
+    padding-bottom: 0.25rem;
     @media (min-width: $mediumBreakpoint) {
       --headerFontSize: 1.9rem;
     }

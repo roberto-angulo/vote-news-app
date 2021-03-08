@@ -38,7 +38,7 @@ const NavMenu = ({
     </>
   );
   const printMobileMenuIcons = () => (
-    <ul>
+    <ul className="mobileIconsWrapper">
       <li
         data-test="hamburguerIcon"
         className="hamburguerIcon"
