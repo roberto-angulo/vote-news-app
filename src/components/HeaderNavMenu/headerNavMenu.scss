@@ -14,10 +14,10 @@
 }
 
 .searchIcon {
-  --display: none;
+  /* --display: none;
   @media (min-width: $largeBreakpoint) {
     --display: block;
-  }
+  } */
   cursor: pointer;
   display: var(--display);
 }

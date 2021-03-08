@@ -14,11 +14,13 @@ const NavMenu = ({
   hamburguerIcon,
 }) => {
   const { title, slug } = items.find(({ slug }) => slug === "main");
+
   const printBrandMenuItem = () => (
     <div className="brandBox">
       <Link to={`/${slug}`}>{title}</Link>
     </div>
   );
+
   const printMenuChildrens = (isMobile = false) => (
     <>
       <ul className={`navMenuList ${isMobile && "responsive"}`}>
@@ -42,6 +44,7 @@ const NavMenu = ({
       </ul>
     </>
   );
+
   const printMobileMenuIcons = () => (
     <ul className="mobileIconsWrapper">
       <li
@@ -56,6 +59,7 @@ const NavMenu = ({
       </li>
     </ul>
   );
+
   return (
     <>
       {shouldShowMenuModal && (
