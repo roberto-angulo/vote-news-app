@@ -1,5 +1,6 @@
 import React from "react";
 import { dataConstants } from "../../common/appConstants";
+import PropTypes from "prop-types";
 import newsData from "./dataFeed.json";
 export const NewsContext = React.createContext({});
 
@@ -28,5 +29,8 @@ const NewsProvider = ({ children }) => {
       {children}
     </NewsContext.Provider>
   );
+};
+NewsProvider.propTypes = {
+  children: PropTypes.element.isRequired,
 };
 export default NewsProvider;

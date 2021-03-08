@@ -63,10 +63,6 @@ const HeaderNavMenu = () => {
     </svg>
   );
 
-  /* const closeMenuModal = () => {
-    setShouldShowMenuModal(false);
-  };
- */
   return (
     <>
       {shouldShowSearchModal && (

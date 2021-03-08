@@ -10,6 +10,7 @@ const VotesCardsContainer = () => {
   const { voteState, setVoteState } = React.useContext(NewsContext);
   const [shouldShowModal, setShouldShowModal] = React.useState(false);
   const [clickingVote, setClickingVote] = React.useState("");
+  const [shouldHideInfoBox, setShouldHideInfoBox] = React.useState(false);
   const [hasUserVoted, setHasUserVoted] = React.useState([
     {
       id: null,
@@ -117,6 +118,7 @@ const VotesCardsContainer = () => {
     infoSecondColumn:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu leo sed est imperdiet blandit.",
     xIcon: true,
+    setShouldHideInfoBox,
   };
 
   const ctaSubmitName = {
@@ -137,7 +139,7 @@ const VotesCardsContainer = () => {
         </Modal>
       )}
       <section className="votesCardContainer">
-        <InfoBox {...infoBoxProps} />
+        {!shouldHideInfoBox && <InfoBox {...infoBoxProps} />}
         <h2 className="votesCardContainerHeading">{heading}</h2>
         <div className="votesCardContainerGrid">{printNewsCards()}</div>
         <InfoBox {...ctaSubmitName} />

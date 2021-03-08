@@ -79,7 +79,11 @@ const NavMenu = ({
 
 NavMenu.propTypes = {
   items: PropTypes.array.isRequired,
-  brandLogos: PropTypes.element.isRequired,
+  shouldShowMenuModal: PropTypes.bool.isRequired,
+  className: PropTypes.string,
+  searchIcon: PropTypes.element,
+  setShouldShowMenuModal: PropTypes.func.isRequired,
+  hamburguerIcon: PropTypes.element.isRequired,
 };
 
 export default NavMenu;

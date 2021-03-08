@@ -7,6 +7,7 @@ const InfoBox = ({
   infoSecondColumn,
   className = "",
   xIcon = false,
+  setShouldHideInfoBox,
 }) => {
   return (
     <div className={`infoBox ${className}`} data-test="infoBox">
@@ -18,7 +19,11 @@ const InfoBox = ({
       </div>
 
       {xIcon && (
-        <div data-test="closeIconColumn" className="closeIconColumn">
+        <div
+          data-test="closeIconColumn"
+          className="closeIconColumn"
+          onClick={() => setShouldHideInfoBox(true)}
+        >
           &times;
         </div>
       )}
@@ -31,6 +36,7 @@ InfoBox.propTypes = {
   infoSecondColumn: PropTypes.element.isRequired || PropTypes.string.isRequired,
   className: PropTypes.string,
   xIcon: PropTypes.bool,
+  setShouldHideInfoBox: PropTypes.func,
 };
 
 export default InfoBox;

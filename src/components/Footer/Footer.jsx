@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import "./footer.scss";
 
 const Footer = ({ footerItems, socialData }) => {
-  console.log("socialData", socialData);
   return (
     <div className="footerWrapper">
       <nav>
@@ -21,6 +20,9 @@ const Footer = ({ footerItems, socialData }) => {
   );
 };
 
-Footer.propTypes = {};
+Footer.propTypes = {
+  footerItems: PropTypes.element.isRequired,
+  socialData: PropTypes.array.isRequired,
+};
 
 export default Footer;

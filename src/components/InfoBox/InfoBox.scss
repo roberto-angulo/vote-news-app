@@ -2,13 +2,16 @@
 .infoBox {
   --textAlignment: center;
   --flexDirection: column;
+  --paddingBottom: 3rem;
   @media (min-width: $largeBreakpoint) {
     --textAlignment: left;
     --flexDirection: row;
+    --paddingBottom: 1.5rem;
   }
   background-color: $lightGray;
   display: flex;
   padding: 1.5rem;
+  padding-bottom: var(--paddingBottom);
   margin-top: 2.2rem;
   flex-direction: var(--flexDirection);
   text-align: var(--textAlignment);

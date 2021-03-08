@@ -1,12 +1,10 @@
 import React from "react";
 
-const LogIn = (props) => {
-  console.log("LOGIN PAGE", props);
+const LogIn = () => {
   return (
     <article>
       <h1>Login</h1>
     </article>
   );
 };
-
 export default LogIn;

@@ -1,7 +1,6 @@
 import React from "react";
 
-const PasTrials = (props) => {
-  console.log("PAST TRIALS", props);
+const PasTrials = () => {
   return (
     <article>
       <h1>Past Trials</h1>

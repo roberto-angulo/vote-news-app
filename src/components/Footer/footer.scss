@@ -1,11 +1,23 @@
 @import "../../styles/global";
 .footerMenu {
+  --display: block;
   --textAlignment: center;
   @media (min-width: $mediumBreakpoint) {
+    --display: flex;
     --textAlignment: left;
   }
   text-align: var(--textAlignment);
   list-style: none;
+  display: var(--display);
+  margin-bottom: 1.75rem;
+  line-height: 1.35rem;
+  li {
+    --marginLeft: 0;
+    @media (min-width: $mediumBreakpoint) {
+      --marginLeft: 0.75rem;
+    }
+    margin-left: var(--marginLeft);
+  }
 }
 
 .socialNetworks {

@@ -8,7 +8,6 @@ const FooterContainer = () => {
     menuNav.map((currentItem, index) => (
       <li key={`footerItem_${index}`}>{currentItem.title}</li>
     ));
-  //console.log(printMenuItems);
   return (
     <footer className="footerContainer">
       {<Footer footerItems={printMenuItems()} socialData={social} />}

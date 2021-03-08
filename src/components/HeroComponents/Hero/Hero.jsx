@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./hero.scss";
 
 const Hero = ({ children }) => {
@@ -7,5 +8,8 @@ const Hero = ({ children }) => {
       {children}
     </section>
   );
+};
+Hero.propTypes = {
+  children: PropTypes.element.isRequired,
 };
 export default Hero;
